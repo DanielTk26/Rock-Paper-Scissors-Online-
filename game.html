@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors Online!</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/homepagestyle.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="./assets/javascript/functions.js"></script>
+    <script src="./assets/javascript/logic.js"></script>
+
+<script>
+    var ins = alert("Welcome to the Game. All you have to do is pick your choice and your opponent will do the same and the system will conclude who the winner is. There are three rounds and the person who wins most rounds will be the Winner!! Have Fun!");
+</script>
+
+
+</head>
+
+<body>
+    <div id="grad1">
+
+        <div class="container container-fluid">
+            <div class="game-head-area">
+
+                <div class="row justify-content-center">
+                    <div class="col col-sm-3"></div>
+                    <div class="col col-sm-6 justify-content-center">
+                        <div class="homepageImages justify-content-center">
+
+                            <img class="propImage img-fluid justify-content-center " src="./assets/images/rock.svg">
+
+                            <img class="propImage img-fluid rounded float-left" src="./assets/images/paper.svg">
+                            <img class="propImage img-fluid rounded float-left" src="./assets/images/scissors.svg">
+                        </div>
+                    </div>
+
+                    <div class="col col-sm-3"></div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col col-sm-12 justify-content-center">
+                        <div class=" justify-content-center">
+                            <span class="gameTitle">Rock Paper Scissors Online!</span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col col-sm-6 player-area justify-content-center">
+                    <div class="row justify-content-center">
+                        <span class="player-name"></span>
+                    </div>
+                    <div class=" row justify-content-center player-scoring">
+                        <div class="col col-sm-2  justify-content-center">
+                            <span class="fa-stack fa-lg player-star-1">
+                                <i class="fa fa-circle fa-stack-2x player-star-1"></i>
+                                <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </div>
+                        <div class="col col-sm-2  justify-content-center">
+                            <span class="fa-stack fa-lg player-star-2 ">
+                                <i class="fa fa-circle fa-stack-2x player-star-2 "></i>
+                                <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </div>
+                        <div class="col col-sm-2   justify-content-center">
+                            <span class="fa-stack fa-lg player-star-3">
+                                <i class="fa fa-circle fa-stack-2x player-star-3"></i>
+                                <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row player-choices justify-content-center">
+                        <div class="col col-sm-4 player-rock">
+                            <img src="./assets/images/rock.svg" class="player-choice-image  " imagename="rock">
+                        </div>
+                        <div class="col col-sm-4 player-paper">
+                            <img src="./assets/images/paper.svg" class="player-choice-image img-fluid rounded "
+                                imagename="paper">
+
+                        </div>
+                        <div class="col col-sm-4 player-scissors">
+                            <img src="./assets/images/scissors.svg" class="player-choice-image img-fluid rounded "
+                                imagename="scissors">
+
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center round-message">
+                        <span class="player-message"></span>
+                    </div>
+
+
+                </div>
+
+                <div class="col col-sm-6 opponent-area justify-content-center">
+                    <div class="row justify-content-center">
+                        <span class="opponent-name"></span>
+                    </div>
+
+                    <div class=" row justify-content-center opponent-scoring">
+                        <div class="col col-sm-2   justify-content-center">
+                            <span class="fa-stack fa-lg opponent-star-1">
+                                <i class="fa fa-circle fa-stack-2x opponent-star-1"></i>
+                                <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </div>
+                        <div class="col col-sm-2  justify-content-center">
+                            <span class="fa-stack fa-lg opponent-star-2 ">
+                                <i class="fa fa-circle fa-stack-2x opponent-star-2 "></i>
+                                <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </div>
+                        <div class="col col-sm-2   justify-content-center">
+                            <span class="fa-stack fa-lg opponent-star-3">
+                                <i class="fa fa-circle fa-stack-2x opponent-star-3"></i>
+                                <i class="fa fa-star fa-stack-1x fa-inverse"></i>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row opponent-choices justify-content-center">
+                        <div class="col col-sm-4 opponent-rock">
+                            <img src="./assets/images/rock.svg" class="opponent-choice-image" imagename="rock">
+                        </div>
+                        <div class="col col-sm-4 opponent-paper">
+                            <img src="./assets/images/paper.svg" class="opponent-choice-image img-fluid rounded "
+                                imagename="paper">
+
+                        </div>
+                        <div class="col col-sm-4 opponent-scissors">
+                            <img src="./assets/images/scissors.svg" class="opponent-choice-image img-fluid rounded "
+                                imagename="scissors">
+
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center round-message">
+                        <span class="opponent-message"></span>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col col-sm-12">
+                    <span class="game-over-message"></span>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

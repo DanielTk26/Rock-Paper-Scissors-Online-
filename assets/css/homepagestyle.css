@@ -1,0 +1,72 @@
+#grad1 {
+    height: 100vh;
+    background-color: #ceddec;
+    background-image: linear-gradient(to right, #f1f7a5, #b1e2eb);
+}
+
+
+  .winning-star {
+      color: gold !important
+  }
+
+  .fa-stack .fa-circle{
+    color: white;
+  }
+
+
+.scoring-icon, .player-choices, .opponent-choices{
+    margin: 40px;
+}
+
+.player-choice-image, .opponent-choice-image {
+    width: 8vw;
+    height: 6vw;
+    text-align: center;
+}
+
+.propImage {
+    width: 8vw;
+    height: 6vw;
+    text-align: center;
+    margin: 10px;
+  
+}
+
+.gameTitle, .game-over-message {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 40px;
+    text-align: center;
+    margin: 130px;
+}
+
+.player-name, .opponent-name {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 30px;
+    color: white;
+    padding: 20px;
+}
+
+.signupform-hidden {
+    visibility: hidden;
+}
+
+#player-list {
+    color: red;
+    font-style: italic;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+}
+
+.player-timer , .opponent-timer {
+    font-size: 2.5em;
+    padding: 10px;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .player-message, .opponent-message{
+      font-size: 1.5em;
+  }
+
+  .redborder{
+      border: 2px solid red
+  }

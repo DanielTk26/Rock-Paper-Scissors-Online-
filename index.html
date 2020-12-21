@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Rock Paper Scissors Online!</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/homepagestyle.css">
+
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   
+    <script src="./assets/javascript/game.js"></script>
+    <script src="./assets/javascript/functions.js"></script>
+
+    <script>
+        var instruct = alert("Hey there! Login or signup and play with someone whose status is available by clicking on the available button. Have fun!");
+    </script>
+
+</head>
+
+
+<body>
+    <div id="grad1">
+
+        <div class="container container-fluid">
+            <div class="row justify-content-center">
+                <div class="col col-sm-3"></div>
+                <div class="col col-sm-6 justify-content-center">
+                    <div class="homepageImages justify-content-center">
+
+                        <img class="propImage img-thumbnail img-fluid justify-content-center "
+                            src="./assets/images/rock.svg">
+
+                        <img class="propImage img-thumbnail img-fluid rounded float-left"
+                            src="./assets/images/paper.svg">
+                        <img class="propImage img-thumbnail img-fluid rounded float-left"
+                            src="./assets/images/scissors.svg">
+                    </div>
+
+                </div>
+                <div class="col col-sm-3"></div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col col-sm-12 justify-content-center">
+                    <div class=" justify-content-center">
+                        <span class="gameTitle">Rock Paper Scissors Online!</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-lg-6 signupform">
+                    <div class="card">
+                        <div class="card-header">
+                            New Player Sign-Up / Sign In with your Name and E-mail
+                        </div>
+                        <div class="card-body">
+
+                            <form role="form">
+                                <div class="form-group">
+                                    <label for="name-input">Name:</label>
+                                    <input class="form-control" id="name-input" type="text">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email-input">Email:</label>
+                                    <input class="form-control" id="email-input" type="email">
+                                </div>
+                                <button class="btn btn-primary" id="add-player" type="submit">Join</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                   
+                    <div class="card mb-4">
+                        <div class="card-header">Current Players : <span id="player-list"></span>  </div>
+                        <div class="card-body">
+                            <table class="table table-sm table-hover" id='player-table'>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Player Name</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col">Games Won</th>
+                            
+                                    
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+    
+            </div>
+    
+            <h3>Watch How to Play Below...</h3>  
+        </div>
+    
+                    
+    </div>
+
+    <iframe width="1357" height="609" src="https://www.youtube.com/embed/EpBsXuxRJS8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+</body>
+
+</html>
